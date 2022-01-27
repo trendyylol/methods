@@ -1,0 +1,13 @@
+local kick_hook = nil 
+kick_hook = hookfunction(Client.Kick, function(...)
+    if (...) then 
+        return 
+    end
+    
+    return kick_hook(...)
+end)
+
+local shutdown_hook = nil 
+shutdown_hook = hookfunction(game.Shutdown, function()
+    return 
+end)
